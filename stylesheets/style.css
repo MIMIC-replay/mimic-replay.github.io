@@ -719,3 +719,7 @@ li.nested {
   margin-left: 50px;
 }
   
+img.table-icon {
+  width: 40px;
+  margin: 0px;
+}
