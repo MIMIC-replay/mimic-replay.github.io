@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="description"
+    content="Mimic - A dynamic Session Replay tool that puts you in the driver's seat of your website's user experience." />
+  <meta name="title" property="og:title" content="mimic" />
+  <meta property="og:type" content="Website" />
+  <meta name="image" property="og:image" content="images/thumb.png" />
+  <meta name="author" content="Mimic" />
+
+  <!-- <script defer data-domain="mimic-replay.com" src="https://plausible.io/js/plausible.js"></script> -->
+
+  <!-- BEGIN favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#322626">
+  <!-- END favicon -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MIMIC</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" />
+  <link rel="stylesheet" href="stylesheets/reset.css" />
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="stylesheets/responsive.css" />
+  <link rel="stylesheet" href="stylesheets/modal.css" />
+</head>
+<body>
+  <header class="mobile-menu-closed">
+    <div id="header">
+      <a href="/">
+        <img src="images/logo/mimic-transparent-notext.png" alt="MIMIC logo"/>
+      </a>
+      <nav>
+        <a href="#start-here" class="selected">Start Here</a>
+        <a href="#case-study">Case Study</a>
+        <a href="#presentation">Presentation</a>
+        <a href="#our-team">Our Team</a>
+        <a href="https://github.com/2401-Team-4/capstone" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+      </nav>
+      <div id="menu">
+        <button type="button">
+          <svg id="mobile-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="mobile-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="header-buffer"></div>
+
+    <div id="mobile-menu">
+      <a href="#start-here" class="selected">Start Here</a>
+      <a href="#case-study">Case Study</a>
+      <a href="#presentation">Presentation</a>
+      <a href="#our-team">Our Team</a>
+      <a href="https://github.com/2401-Team-4/capstone" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </header>
+
+  <div id="start-here" class="main-section">
+    <div class="h-full">
+      <div class="static-logo-color"></div>
+      <div class="bg-blue">
+        <img class="mimic sm-screen lg:hidden" src="images/logo/mimic-logo-transparent.png" alt="MIMIC logo with text" />
+
+        <p class="light-text">
+          A session replay tool that puts you in the driver's seat 
+          of your website's user experience.
+        </p>
+        <button class="try-mimic-container">
+          <a href="https://www.mimic-replay.com/" class="try-mimic-link" target="_blank">
+            <p class="try-mimic-text">
+              Try MIMIC
+            </p>
+          </a>
+        </button>
+
+      </div>
+    </div>
+    <div class="h-full">
+      <div class="bg-teal static-logo-teal-light">
+      </div>
+      <div class="bg-teal">
+        <h2 class="sm-header">Cloud-based</h2>
+        <h2>Get started quickly</h2>
+        <p>
+          Instrument your application in seconds thanks to our custom script installer.
+        </p>
+      </div>
+    </div>
+    <div class="h-full">
+      <div class="bg-orange static-logo-orange">
+      </div>
+      <div class="bg-orange">
+          <h2>Enjoy unrestricted features</h2>
+          <p>
+            MIMIC provides full control of what and how much data is captured, where it is stored and how long it is stored for. 
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+
+  <aside id="toc">
+    <ul>
+
+      <!-- Section 1 -->
+      <li data-section="section-1" class="selected">
+        <a href="#section-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Introduction</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 2 -->
+      <li data-section="section-2">
+        <a href="#section-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Observability</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 3 -->
+      <li data-section="section-3">
+        <a href="#section-3">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Frontend Observability</p>
+          </div>
+        </a>
+      </li>
+      <li data-section="section-3" class="subitem">
+        <a href="#section-3-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Performance Monitoring Tools</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-3" class="subitem">
+        <a href="#section-3-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Error Tracking Tools</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-3" class="subitem">
+        <a href="#section-3-3">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Real User Monitoring (RUM) Tools & Analytics</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-3" class="subitem">
+        <a href="#section-3-4">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Lack of User-centric Perspective</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-3" class="subitem">
+        <a href="#section-3-5">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Lack of Visual Context</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-3" class="subitem">
+        <a href="#section-3-6">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Lack of Granular User Interaction Details</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 4 -->
+      <li data-section="section-4">
+        <a href="#section-4">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Session Replay</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-4" class="subitem">
+        <a href="#section-4-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Use Cases</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-4" class="subitem">
+        <a href="#section-4-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Tradeoffs</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 5 -->
+      <li data-section="section-5">
+        <a href="#section-5">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Existing Session Replay Tools</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-5" class="subitem">
+        <a href="#section-5-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Software-as-a-service (SaaS) solutions</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-5" class="subitem">
+        <a href="#section-5-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Do-it-yourself (DIY)</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-5" class="subitem">
+        <a href="#section-5-3">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Hybrid solutions</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 6 -->
+      <li data-section="section-6">
+        <a href="#section-6">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Introducing MIMIC</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-6" class="subitem">
+        <a href="#section-6-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Benefits</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-6" class="subitem">
+        <a href="#section-6-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Tradeoffs</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-6" class="subitem">
+        <a href="#section-6-3">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Setup</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-6" class="subitem">
+        <a href="#section-6-4">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Usage</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 7-->
+      <li data-section="section-7">
+        <a href="#section-7">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>MIMIC Architecture</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-7" class="subitem">
+        <a href="#section-7-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Instrumentation Stage</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-7" class="subitem">
+        <a href="#section-7-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Emitting Stage</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-7" class="subitem">
+        <a href="#section-7-3">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Shipping Stage</p>
+          </div>
+        </a>
+      </li>
+      
+      <li data-section="section-7" class="subitem">
+        <a href="#section-7-4">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Presentation Stage</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 8 -->
+      <li data-section="section-8">
+        <a href="#section-8">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Technical Challenges & Tradeoffs</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-8" class="subitem">
+        <a href="#section-8-1">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Identifying Sessions</p>
+          </div>
+        </a>
+      </li>
+
+      <li data-section="section-8" class="subitem">
+        <a href="#section-8-2">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Storage</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- Section 9 -->
+      <li data-section="section-9">
+        <a href="#section-9">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>Future Work</p>
+          </div>
+        </a>
+      </li>
+
+
+      <!-- Section 10 -->
+      <li data-section="section-10">
+        <a href="#section-10">
+          <div>
+            <div class="bullet">
+              <div></div>
+            </div>
+            <p>References</p>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </aside>
+
+  <div id="case-study" class="main-section">
+    <div id="case-study-content">
+      <div class="prose">
+
+        <h1>MIMIC Case Study</h1>
+
+        <!-- Section 1 -->
+        <h2 id="section-1">1. Introduction</h2>
+
+        <p>Whether launching a new website or maintaining an existing application, understanding how users interact with it is paramount. The user experience significantly influences business outcomes, and issues such as bugs, and poor performance can contribute to a negative user experience.</p>
+
+        <p>While engineers regularly need to fix the bugs that exist in their applications, understanding the source of these issues is not always straightforward. Engineers often have the question, “what exactly did my users do” to cause this bug?</p>
+        
+        <p>MIMIC doesn’t just tell organizations how users interact with their applications, it shows them.</p>
+        
+        
+        <p><img src="images/gifs/MIMIC_yes_error_demo.gif" alt="MIMIC dashboard overview demo" /></p>
+        
+        <p>MIMIC is an open-source session replay framework for recording and replaying user sessions that illuminates the sequence of events that led to a given bug or network error.</p>
+
+        <p>Before we get into more detail about what MIMIC is and how it accomplishes this, let’s first discuss the problem domain and different techniques aimed at addressing these issues.</p>
+
+        <!-- Section 2 -->
+        <h2 id="section-2">2. Observability</h2>
+
+        <p>“[Observability is the] measure of how well you can understand and explain any state your application can get into, no matter how novel, or bizarre.” - Majors et al., Observability Engineering <a href="#section-10">[1]</a></p>
+
+        <p>Generally, software is about taking an input, performing some computation, and producing an output. When we get an output that we don’t expect, we can take different steps to understand the problem.</p>
+        
+        <p>For example, when we’re debugging a simple program locally, we may not realize something is wrong unless it’s taking a long time for something to load, or if we happen to notice a CPU usage spike. If we look at the activity monitor on our computer we can see exact measurements. These are examples of <strong>metrics</strong> which can help tell us <strong>what</strong> problems exist.</p>
+        
+        <p>Now that we know a problem exists, our next step might involve outputting information to our console to determine <strong>when</strong> in our code a problem occurs. These are known as <strong>logs</strong> and they include error messages. They help us pinpoint the root cause of problems.</p>
+        
+        <p>If there was an error while our program was executing, our console might also produce a <strong>trace</strong> for us. These are records of the path of our code’s execution as it moves through different functions and methods. They give us the context of our problem and <strong>where</strong> our problem happens within that context.</p>
+        
+        <p>Metrics, logs, and traces are so useful for solving problems that together they are known as the Three Pillars of Observability. <a href="#section-10">[2]</a></p>
+        
+        <p><img src="images/MTL-transparent.png" alt="Pillars of observability: metrics, traces, logs" /></p>
+        
+        <p>We became interested in the challenges that frontend developers face in observing their applications, let's discuss how observability tools can help debug frontend applications.</p>
+
+        <!-- Section 3 -->
+        <h2 id="section-3">3. Frontend Observability</h2>
+
+        <p>There are several categories of observability tools that can aid with debugging frontend applications including Performance Monitoring tools, Error Tracking tools, and Real User Monitoring & Analytics tools. <a href="#section-10">[3]</a></p>
+        <h4 id="section-3-1">3.1. Performance monitoring tools</h4>
+
+        <p>Performance Monitoring tools (e.g. New Relic APM) collect and display metrics such as response time, page load time and server latency. This data is usually aggregated and analyzed to identify trends, set benchmarks, and track performance improvements. Some tools offer the ability to drill into the data at the individual session level to find outliers that require attention.</p>
+
+        <h4 id="section-3-2">3.2. Error tracking tools</h4>
+
+        <p>Error tracking tools (e.g. Sentry) can capture errors like failed network requests, alert developers when they occur, and provide context such as the URLs and request headers. Error tracking tools can also aggregate errors by type and frequency. Analyzing this data can help organizations focus on the most important issues affecting their users.</p>     
+
+        <h4 id="section-3-3">3.3. Real User Monitoring (RUM) Tools & Analytics</h4>
+
+        <p>These tools (e.g. Datadog Real User Monitoring, Google Analytics) automate the process of capturing additional context by tracking user interactions including page loads and link clicks. This information can then be viewed  by developers in the form of a list of interactions that took place during a user session. 
+
+
+        <p><img src="images/observability-transparent.png" alt="Categories of observability tools: performance monitoring, error tracking, real-user monitoring"/></p>
+
+        <p>While the above categories of observability tools provide a great deal of insight into the behavior, performance, and health of web applications — especially when used together — some challenges nevertheless remain for those seeking to address problems specific to frontend applications. <a href="#section-10">[4]</a></p>
+   
+        <h4 id="section-3-4">3.4. Lack of user-centric perspective</h4>
+
+        <p>While these tools often possess individual user session data, they tend to provide it in aggregated form. This can prove challenging, for both technical and non-technical stakeholders, to access and understand how the information across these different tools relates to each other and to the experience of a specific user.</p>
+
+        <h4 id="section-3-5">3.5. Lack of visual context</h4>
+
+        <p>Even if all of the information regarding a specific user session is gathered across the different observability tools, it can still be hard to make sense of what that data means without actually seeing it in the context of the web application itself.</p>
+
+        <h4 id="section-3-6">3.6. Lack of granular user interaction details</h4>
+
+        <p>Real User Monitoring and Analytics tools can provide information about user interactions such as page loads and clicks, but they usually lack the granular details that can signal user intent, navigation patterns, and areas of friction within the application.</p>
+
+        <p>Fortunately, there is a category of observability tools that help address these challenges referred to as session replay.</p>
+
+        <!-- Section 4 -->
+        <h2 id="section-4">4. Session Replay</h2>
+
+        <p>Session replay is an observability tool that allows organizations to record individual user sessions within web applications and replay those sessions as if they were videos. Although the replay appears to be a video, it is in fact a reconstruction of the DOM (Document Object Model).</p>
+
+        <p><img src="images/session-replay.png" alt="Session Replay abstract representation" /></p>
+        
+        <p>Session replay tools accomplish this by capturing snapshots of the DOM, along with the user’s interactions such as mouse movements, clicks, keyboard inputs, network requests and responses.</p>
+
+        <ul>
+          <li><strong>User-centric perspective.</strong> Session replay tools present collected data in the context of individual user sessions making it easier for stakeholders of all types to understand.</li>
+          <li><strong>Visual context.</strong> Session replay tools record and replay the actual user interface and interactions with that interface. This helps developers and others to understand user behavior and identify usability issues.</li>
+          <li><strong>Granular user interaction details.</strong> Session replay tools capture smaller details, often overlooked by other tools, such as mouse movements, scrolls, and other actions that can signal user intent, navigation patterns, and areas of friction within the application. Other tools could capture this data, but without visual context this information becomes less meaningful to organizations.</li>
+        </ul>
+
+        <h3 id="section-4-1">4.1. Use Cases</h3>
+
+        <p>A primary application for session replay is <strong>debugging</strong>, where session replay offers a granular, visual representation of the exact sequence of actions of a user's journey, assisting engineers in identifying and resolving issues efficiently. Additional use cases include <a href="#section-10">[5]</a>:</p>
+
+        <ul>
+          <li><strong>Behavior funnels.</strong> Offer valuable insights into user navigation patterns, helping businesses optimize user flows and enhance conversions.</li>
+          <li><strong>Customer support.</strong> Enables customer support teams to better understand user issues and provide more effective assistance.</li>
+          <li><strong>Client-side metrics tracking.</strong> This focuses on monitoring technical aspects such as performance, loading times, and user interactions on the client side of an application.</li>
+          <li><strong>Compliance/legal requirements.</strong> Session replay can be used for auditing user interactions as part of industry regulations, tracking activities as part of internal policies, and necessary documentation of incidents or security breaches.</li>
+        </ul>
+        
+
+        <h3 id="section-4-2">4.2. Tradeoffs</h3>
+
+        <h4 id="section-4-2-1">4.2.1. Performance Overhead & Impact on User Experience</h4>
+        <p>Session replay tools introduce performance overhead to web applications as they record and transmit DOM snapshots and user interaction data. This can increase CPU, memory, and network bandwidth usage. <a href="#section-10">[6]</a></p>
+        <p>Organizations should consider whether these impacts on performance could be significant enough to frustrate users or detract from the overall usability of the application.</p>
+
+        <h4 id="section-4-2-2">4.2.2. Privacy Concerns</h4>
+
+        <p>One of the main trade-offs of session replay tools is privacy. Capturing and replaying user interactions may involve collecting sensitive information, such as personally identifiable information, passwords, or financial data. <a href="#section-10">[7]</a></p>
+
+        <p>If a website handles sensitive user data, organizations should consider implementing measures to ensure the privacy and security of user data when implementing session replay, such as masking or omitting the capture of sensitive data.</p>
+
+        <h4 id="section-4-2-3">4.2.3. Engineering & Financial Costs</h4>
+
+        <p>Integrating and maintaining session replay functionality within a web application can require development effort and ongoing maintenance. <a href="#section-10">[7]</a></p>
+
+        <p>Storing session data for replay purposes can also incur storage costs, especially if data is stored long-term.</p>
+
+        <p>For this reason, as well as those listed above, it’s important for organizations to carefully weigh the benefits of session replay against its tradeoffs.</p>
+
+        <p>It’s important to consider that in some cases, session replay may not provide enough value or actionable insights to outweigh its performance impacts, privacy implications, and financial cost.</p>
+
+        <p>Examples of such applications include:</p>
+        
+        <ul>
+          <li>Those needing to prioritize performance above all else.</li>
+          <li>Those whose existing observability tools adequately meet their requirements for understanding user behavior and application performance. This might be especially the case of applications that have minimal user interaction or that have well-understood user behavior patterns.</li>
+        </ul>
+
+
+        <!-- Section 5 -->
+        <h2 id="section-5">5. Existing Session Replay Tools</h2>
+
+        <p>Organizations seeking to add session replay to their application have three main options: a hosted software-as-a-service solution, a do-it-yourself (DIY) approach, or a solution that is a hybrid of these two.</p>
+        
+        <h3 id="section-5-1">5.1. Software-as-a-service (SaaS) solutions</h3>
+
+        <p>For larger organizations that can shoulder the cost of a fully featured and supported tool, SaaS solutions (e.g. FullStory, Hotjar, Microsoft Clarity) can be a good option. <a href="#section-10">[8]</a></p>
+        
+        <h4>Benefits</h4>
+
+        <ul>
+          <li><strong>Ease of setup.</strong> Vendor provides deployed infrastructure.</li>
+          <li><strong>Scalability & Maintenance.</strong> Vendor handles scaling and maintenance.</li>
+          <li><strong>Ready-made user interfaces.</strong> Feature-rich user interfaces that visualize the data captured by logs to make it easier for engineers to understand the nature of problems</li>
+        </ul>
+
+        <h4>Tradeoffs</h4>
+
+        <ul>
+          <li><strong>Data Governance.</strong> Sensitive data may be stored with a third-party.</li>
+          <li><strong>Complexity.</strong> Large feature sets can be overwhelming and difficult to learn.</li>
+          <li><strong>High cost.</strong> SaaS vendors typically charge higher fees than the options discussed below.</li>
+        </ul>
+        
+        
+        <h3 id="section-5-2">5.2. Do-it-yourself (DIY)</h3>
+                <p>
+                  For organizations that cannot accept the aforementioned tradeoffs, a DIY approach can be appropriate. Organizations can build their own session replay tool using open-source libraries such as rrweb which provides recording and replaying functionality. [8]
+                </p>
+
+        <h4>Benefits</h4>
+
+        <ul>
+          <li><strong>Customizability.</strong> DIY allows organizations to customize their tool to the specific needs of their application. e.g. if the transmission of certain types of data is compromising the performance of the application, modifications can be made to reduce the amount of that data being transmitted.</li>
+          <li><strong>Data governance.</strong> Software engineers get to decide exactly how and where their users’ data is transmitted, stored, and accessed.</li>
+          <li><strong>Low cost.</strong> A DIY solution does not require paying monthly fees to a session replay vendor.</li>
+        </ul>
+
+        <h4>Tradeoffs</h4>
+
+          <ul>
+            <li><strong>Time.</strong> Engineering hours are required to research, develop, and maintain the infrastructure for this DIY frontend observability tool. This can take engineers away from core tasks and in some situations could be more expensive than the fees charged by SaaS solutions.</li>
+            <li><strong>Features.</strong> DIY tools are also less likely to be fully-featured, especially when first developed.</li>
+          </ul>
+
+        <h3 id="section-5-3">5.3. Hybrid Solutions</h3>
+
+        <p>
+          Some organizations might prefer a DIY approach, but do not have the time or engineering resources to allocate to it. For these users, some SaaS providers (e.g. Highlight, PostHog) offer an open-source, self-hosted option which we’ll refer to as a hybrid approach. These solutions aim to combine the ease of setup of traditional SaaS tools with the customizability and data governance of DIY solutions. <a href="#section-10">[9]</a>
+        </p>
+
+        <h4>Benefits</h4>
+        <ul>
+          <li><strong>Customizability.</strong> While hybrid solutions provide default settings, their open-source nature allows developers to customize the tool to the specific needs of their organization.</li>
+          <li><strong>Data governance.</strong> Organizations get to decide exactly how their user's data is transmitted, stored, and accessed</li>
+        </ul>
+
+        <h4>Tradeoffs</h4>
+
+        <ul>
+          <li><strong>Limited usage.</strong> The architecture provided for self-hosted options typically cannot scale to the same extent as SaaS providers’ hosted offerings. This imposes limitations in terms of number of projects and monthly sessions. <a href="#section-10">[10]</a> <a href="#section-10">[11]</a></li>
+          <li><strong>Limited features.</strong> Providers of these hybrid offerings often present a choice between feature-restricted free options and fully-featured paid options.</li>
+        </ul>
+    
+        <!-- <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>SaaS</th>
+              <th>DIY</th>
+              <th>Hybrid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ease of Setup</td>
+              <td>✅</td>
+              <td>❌</td>
+              <td>❓</td>
+            </tr>
+            <tr>
+              <td>Scalability & Maintenance</td>
+              <td>✅</td>
+              <td>❌</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td>Time</td>
+              <td>✅</td>
+              <td>❌</td>
+              <td>❓</td>
+            </tr>
+            <tr>
+              <td>Customizability</td>
+              <td>❌</td>
+              <td>✅</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td>Data Governance</td>
+              <td>❌</td>
+              <td>✅</td>
+              <td>✅</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>❌</td>
+              <td>✅</td>
+              <td>✅</td>
+            </tr>
+          </tbody>
+        </table>
+         -->
+
+         <p><img src="images/comparison-table.png" alt="Session replay tools comparison table"></p>
+
+        <!-- Section 6 -->
+        <h2 id="section-6"> 6. Introducing MIMIC</h2>
+        <p>
+          MIMIC falls into the hybrid solution category, combining the easy setup of a software-as-a-service product with the data ownership and control of a DIY approach.
+        </p>
+        <p>
+          MIMIC is an open source, self-hosted session replay framework that abstracts away the challenges of recording and replaying web application user sessions. It is tailored towards user experience improvement and debugging, and providing granular insights into application problems in a simple and intuitive manner. It uses a recording and replaying library, rrweb, and custom network interceptors to gather event data from the web application users interact with. This data is sent to the MIMIC backend for processing and storage and is then rendered to the MIMIC frontend dashboard.        </p>
+        <p>
+          MIMIC is an ideal solution for smaller companies looking for a low cost, easy to implement session replay solution which provides complete data governance and customizability to aid in debugging their frontend applications.
+        </p>
+
+        <p><img src="images/gifs/MIMIC_no_error_demo.gif" alt="MIMIC dashboard demo" /></p>
+
+        <h3 id="section-6-1">6.1. Benefits</h3>
+
+        <h4>Data governance</h4>
+
+        <p>Our framework supports self-hosting only. This affords the user complete control of how their users’ data is captured, stored, processed and disposed of.</p>
+        <p>Existing hybrid solutions typically offer self-hosting options to a degree, however they come with restricted functionality or usage limits, unlike MIMIC.</p>
+
+        <h4>Customizability</h4>
+
+        <p>Similar to other hybrid tools, MIMIC enables customization by the user as to what data is captured by the recorder, how much data is captured, where it is stored and how long it is stored for. Additionally, we designed a simple-to-use CSS variable system so the user is able to easily alter the appearance of the frontend dashboard if they so desire.</p>
+
+        <h4>Time</h4>
+
+        <p>
+          MIMIC does more of the work so that developers can get to what matters quicker — improving their applications and user experiences. Our framework includes an installer to instrument an application with the script logic to capture sessions, an orchestrated backend to process this data, and an intuitive user interface to display it.
+        </p>
+
+        <h4>Data security and privacy</h4>
+
+        <p>
+          MIMIC is biased towards increased data security and privacy. By default, MIMIC masks all user generated text input for enhanced security/privacy however we add explicit instructions as to how this can simply be changed if the user feels that information would be beneficial.
+        </p>
+
+        <h4>Ease of setup</h4>
+        <h5>Instrumenting your application</h5>
+
+        <p>
+          Existing solutions require the user to install the NPM package, manually insert <code>require/import</code> statements and initialization logic within each aspect of their frontend application.
+        </p>
+
+        <p>
+          For ease of use, MIMIC’s custom python installer generates the recorder script based on your input during the installation and programmatically inserts the script tags into all HTML files for you.
+        </p>
+
+        <h5>Setting up the backend</h5>
+
+        <p>
+          In the <code>README.md</code>, MIMIC details the required infrastructure setup including a PostgreSQL database, Redis database and S3 bucket as well as a <code>.env</code> template to simplify setup. Once the infrastructure is in place, completing setup of the backend and frontend requires only one command in the terminal.
+        </p>
+       
+        <h3 id="section-6-2">
+          6.2. Tradeoffs
+        </h3>
+
+        <p>
+          MIMIC does not provide the following features available in other existing solutions:
+        </p>
+
+        <ul>
+          <li>No client-side application performance metrics beyond network request latency</li>
+          <li>No hosted options available to users</li>
+          <li>As MIMIC is tailored for debugging it does not serve the following use cases: </li>
+              <li class="nested">Behavior funnel analysis</li>
+              <li class="nested">Live session viewing</li>
+              <li class="nested">Co-browsing for customer service representatives</li>
+        </ul>
+
+        <h3 id="section-6-3">
+          6.3. Setup
+        </h3>
+        <p>
+          MIMIC's setup involves two main steps:
+        </p>
+  
+        <ol>
+          <li>Deploy MIMIC's telemetry pipeline to a host of your choice.</li>
+          <li>Run MIMIC's command line tool to instrument your application.</li>
+        </ol>
+
+        <p>
+          See <a href="https://github.com/2401-Team-4/MIMIC/blob/main/README.md">our README on GitHub</a> for more detailed instructions including how to deploy MIMIC to AWS.
+        </p>
+
+        <h3 id="section-6-4">
+          6.4. Usage
+        </h3>
+
+        <p>
+          MIMIC's dashboard provides a list of user sessions that can be searched and filtered by IP address, session ID, network request status codes, and errors.
+        </p>
+
+        <p><img src="images/gifs/filtering_sessions.gif" alt="MIMIC usage: filtering session"/></p>
+
+        <p>
+          Clicking on a user session loads that user session in the player allowing the software engineer to view the user's experience of the web application as if they were sitting next to them.
+        </p>
+
+        <p><img src="images/gifs/zoomed_session.gif" alt="MIMIC usage: zoomed session" /></p>
+
+        <p>
+          Session logs, traces, and metadata are viewable alongside the player providing important context.
+        </p>
+
+        <p><img src="images/gifs/network_logs_errors.gif" alt="MIMIC usage: network, logs, errors"/></p>
+
+        <p>
+          When clicking on a specific error in a session, an error modal pops up, providing the stack trace of that error when it occurred, as well as the events leading up to the error, and the session’s metadata.
+        </p>
+
+        <p><img src="images/screenshots/MIMIC_error_modal.png" alt="MIMIC usage: error modal"/></p>
+
+        <p>
+          All user text input is masked by default to ensure data security and user privacy.
+        </p>
+
+        <p><img src="images/screenshots/masked-input.png" alt="MIMIC usage: masked input"/></p>
+
+        <p>
+          Session replays can be shared with anyone with login credentials by copy-and-pasting the url which can even direct a coworker to the exact moment a specific event occurred.
+        </p>
+
+        <p><img src="images/gifs/url_load.gif" alt="MIMIC usage: URL load" /></p>
+
+        <!-- Section 7 -->
+        <h2 id="section-7">
+          7. MIMIC Architecture
+        </h2>
+
+        <p><img src="images/isometrics/isometric-general-b.png" alt="MIMIC architecture: system overview" /></p>
+
+        <p>
+          Telemetry systems like MIMIC have four main stages to their architecture: instrumentation, emitting, shipping, and presentation.
+        </p>
+
+        <ul>
+          <li><strong>Instrumentation Stage.</strong> Code is added to an application to collect, record, and transmit telemetry data.</li>
+          <li><strong>Emitting Stage.</strong> Telemetry data is gathered from the instrumented application and prepared for use inside the telemetry pipeline.</li>
+          <li><strong>Shipping Stage.</strong> Telemetry data is shipped, processed, transformed, and stored for use in the presentation stage.</li>
+          <li><strong>Presentation Stage.</strong> Telemetry data stored during the shipping stage is provided to users with visualization and analysis to help solve problems.</li>
+        </ul>
+
+        <h3 id="section-7-1">
+          7.1. Instrumentation Stage 
+        </h3>
+
+        <p>
+          In order to fulfill our goal of an easy to use session replay tool, we required a simple solution to instrument an application with MIMIC’s functionality. To do this we use a Python installer which, when run, creates a JavaScript file that is then injected into all of the application’s HTML files in the working directory, and all subdirectories, via script tags.
+        </p>
+
+        <p><img src="images/initialization-transparent.png" alt="MIMIC architecture: Instrumentation stage process overview" /></p>
+
+        <p>
+          This solution comes with two main benefits. First, we can deploy our files as a Python package on PyPI (The Python Package Index), meaning that once the package is installed, we can run the installer in any desired program with a single command in the terminal. Second, the flexibility of a custom installer allows MIMIC to be largely agnostic to the type of application it is used with, whether it's a single page web application or a static website. So long as the application utilizes vanilla HTML file(s), the installer can inject the MIMIC script.
+        </p>
+
+        <p>
+          Once run in the root file of a target application, our <code>mimic-replay</code> installation Python package accomplishes four main tasks:
+        </p>
+
+        <ol>
+          <li>Prompts the user for the URL location of their running backend MIMIC application, a unique project name, and password, validating the provided information at each step before the installer continues.</li>
+          <li>Generates our MIMIC JavaScript file, <code>scripts.mimic.js</code> from a template, interpolating it with a randomly generated project ID and the provided MIMIC backend URL.</li>
+          <li>Recursively locates all HTML files nested within the project's root folder, injecting two script elements, one with the <code>rr-web</code> CDN, and one with our local <code>script.mimic.js</code> file's relative location. These script elements have a <code>defer</code> attribute, to ensure that our script loading will not occur until after the client application has been loaded and rendered. This reduces impact on instrumented application load times.</li>
+          <li>Makes a POST request to the MIMIC backend, containing the generated project ID, provided project name, and the encrypted version of the provided project password. If successful, MIMIC is ready to record user sessions in the target application.</li>
+        </ol>
+
+        <p><img src="images/gifs/mimic_script4.0.gif" alt="MIMIC architecture: Instrumentation stage, installation" /></p>
+
+        <p>
+          Now that the MIMIC is properly instrumented in the desired application, it is ready to capture the activity that occurs when the application is in use.  
+        </p>
+
+        <h3 id="section-7-2">
+          7.2. Emitting Stage
+        </h3>
+
+        <p>
+          The emitting stage utilizes two components to record all event data including DOM events, console logs and network requests: the rrweb library and custom network interceptors.
+        </p>
+
+        <h4>DOM events and console logs</h4>
+
+        <p>MIMIC uses a tool called rrweb to record the DOM and subsequent mutations in addition to a plugin for the recorder to capture console logs.The rrweb recording functionality involves creating snapshots of the DOM and tracking changes.</p>
+
+        <p>The full snapshot of the DOM, while similar to calling <code>outerHTML</code> on the document, is a serialized version which additionally includes information like stylesheets, images, etc.</p>
+
+        <p><img src="images/screenshots/DOM.png" alt="MIMIC architecture: Instrumentation stage, DOM snapshot"/></p>
+
+        <p>
+          After completing a full snapshot, rrweb tracks changes to the document by capturing incremental snapshots. These incremental snapshots capture changes to the DOM such as node creation or deletion, attribute changes, text changes, mouse movement and interaction, scrolling, window resizing, and input. This functionality relies heavily on the <code>MutationObserver</code> API tracking changes to the DOM in real time, but also requires custom event listeners added by rrweb to track certain human input that doesn’t trigger the <code>MutationObserver</code>.
+        </p>
+
+        <p><img src="images/gifs/events.gif" alt="MIMIC architecture: Instrumentation stage, event tracking"/></p>
+
+        <h4>Network events</h4>
+
+        <p>For the capturing of network events, MIMIC uses custom interceptors to patch functions and constructors globally available in the browser. </p>
+        <p>We patch the <code>fetch</code> method on the global <code>window</code> object and the <code>open</code> method on the <code>window.XMLHTTPRequest</code> object. This enables us to extract information from the request prior to being sent, as well as data once a response is received. With this information, we can build custom event objects similar to that which rrweb creates for each recorded event. The captured information includes timestamps, paths, and request methods. This script logic, however, can be modified if additional information is desired such as request headers or body.</p>
+        <p>We patch the <code>Websocket</code> constructor on the global <code>window</code> object so that we can add custom event listeners to each Websocket instance created. Similar to the previously mentioned methods we patched, we create custom event objects that include information like the path and message for events such as <code>open</code>, <code>message</code>, <code>close</code>.</p>
+        <p>All recorded events, whether they were created by rrweb or our custom interceptors, are temporarily stored in the browser’s memory until they are sent to the backend infrastructure.</p>
+
+        <h3 id="section-7-3">
+          7.3. Shipping Stage
+        </h3>
+
+        <p>The serialized event data is sent from the instrumented application to the backend server at a specified interval, five seconds by default.</p>
+        <p>The first batch of event data for a given session triggers a three step process:</p>
+
+        <ol>
+          <li>First, a unique session identifier is created and attached as a cookie to the response object alongside a last activity timestamp representing the most recent activity for this session.
+          </li>
+          <li>Next, a new record is created in the relational database for this session including the session’s ID and additional metadata such as the user’s browser, operating system, approximate location and timezone.</li>
+          <li>Finally, two keys are created in the in-memory data store for this session. The first references the serialized event data, while the second serves as a timer (time to live) for the session’s expiration, 10 seconds by default. We need two keys because if we only used one key with a time-to-live for each session, when that key expires signifying the session has ended, the data would be lost before we could request it.</li>
+        </ol>
+
+        <p>At this point, a response is sent back to the instrumented application.</p>
+
+        <p><img src="images/isometrics/isometric-active-session.png" alt="MIMIC architecture: Shipping stage, active session" /></p>
+
+        <p>Each subsequent batch for a given session triggers a two step process:</p>
+
+        <ol>
+          <li>First, the server checks that the cookie attached to the request object is still valid, refreshes the last activity timestamp of the cookie and attaches it to the response object.</li>
+          <li>Next, the serialized event data is appended to the existing event data referenced by the first key in the in-memory temporary data store. The second key, acting as an expiration timer for the first, has its time-to-live refreshed.</li>
+        </ol>
+
+        <p>
+          The final stop for this raw event data in the shipping stage begins when a user session is completed. By default, sessions are deemed complete when a new batch of events have not been received by the in-memory temporary data store for 10 seconds (reminder: new batches are sent every 5 seconds from the instrumented application). This triggers a four step process:
+        </p>
+
+        <ol>
+          <li>First, the second key representing the status of the session expires and the in-memory temporary data store publishes an expiration notice indicating a session has completed.</li>
+          <li>Second, the backend infrastructure which is subscribed to such notices, extracts the serialized event data from the first key and subsequently deletes the key.</li>
+          <li>Next, the backend compresses this serialized event data and sends the compressed object to the permanent object-based store.</li>
+          <li>Finally, the backend updates the session’s end time in the relational database.</li>
+        </ol>
+
+        <p><img src="images/isometrics/isometric-inactive-session-2.png" alt="MIMIC architecture: Shipping stage, ended session" /></p>
+
+        <h3 id="section-7-4">
+          7.4. Presentation Stage
+        </h3>
+
+        <p>
+          We recognized the dashboard as the primary point of interaction with MIMIC for developers, and we wanted to give the frontend's design and functionality special care.
+        </p>
+
+        <p><img src="images/screenshots/MIMIC-login.png" alt="MIMIC architecture: Presentation stage, project login"/></p>
+        
+        <p>
+          Successfully logging in to the frontend dashboard triggers a four step process where the backend retrieves, transforms and sends the requested data:
+        </p>
+
+        <ol>
+          <li>A request for the sessions of an instrumented application is sent to the backend infrastructure.</li>
+          <li>A query is made to the relational database for all completed session records associated with the instrumented application.</li>
+          <li>For each session record returned by the relational query, the compressed event data is requested from the permanent object-based data store. This is conducted by mapping the record’s session IDs to promises and invoking <code>Promise.all</code> with the iterable of promises. This allows us to request all of the sessions’ data in parallel without waiting for each response to begin the next request, while maintaining the chronological order of the sessions.</li>
+          <li>For each session, the backend decompresses the event data, filters the data into more defined groupings (e.g network events, errors, console logs, DOM events), attaches the session metadata retrieved by the original relational query and returns this transformed object in its response to the frontend.</li>
+        </ol>
+        
+        <p><img src="images/isometrics/presentation-retrieving.png" alt="MIMIC architecture: Presentation stage, retrieving session"/></p>
+        
+        <p>The centerpoint of our dashboard is the rrweb provided replayer. Although it appears to play a video recording, rrweb’s replayer is actually an iframe HTML element. This illusion is accomplished via a three step process where the serialized event data is parsed, the iframe element is populated with the DOM dynamically, and subsequent changes are animated as they occur per timestamps assigned by the recorder.</p>
+        
+        <p><img src="images/gifs/zoomed_session2.gif" alt="MIMIC architecture: Presentation stage, session player"/></p>
+
+        <p>Surrounding the player is our custom dashboard including a series of components aggregating different types of events that occurred for the selected session. We based our choice of data to present on our own experiences and those of other working engineers. These include network requests made during the session, console logs recorded, errors with reference to their stacktrace, and user metadata.</p>
+        <p>For all of these types of events, we designed a click-to-navigate feature that allows the user with a click of their mouse to navigate to exactly where an event occurred in the replayer for visual inspection. </p>
+        <p>Given our objective of simplifying the debugging process, filtering and searching sessions was a main priority. There wouldn’t be as much value to be gained from inspecting sessions where everything went according to plan. Sessions can be searched by session ID/IP address and within each session the user is able to search for specific network requests, logs or errors.  Sessions can also be filtered using “Error Mode” by clicking on the toggle in our session selection list. The list will then only include sessions in which errors occurred or network requests had status codes in the 400+ range so the developer can immediately identify where and when something went wrong.</p>
+
+        <p><img src="images/gifs/error-filter.gif" alt="MIMIC architecture: Presentation stage, error mode"/></p>
+
+        <p>Additionally, we provide a panel where user metadata is displayed as variants of browsers, operating systems, and location can often contribute to bugs and non-performant requests.</p>
+
+        <p><img src="images/screenshots/metadata.png" alt="MIMIC architecture: Presentation stage, session metadata"/></p>
+
+        <p>Combining all four phases comprises our session replay framework. We had to solve a variety of technical challenges and accept certain tradeoffs, some of which we discuss in greater detail below.</p>
+
+
+        <!-- Section 8 -->
+        <h2 id="section-8">
+          8. Technical Challenges & Tradeoffs
+        </h2>
+
+        <h3 id="section-8-1">
+          8.1. Identifying Sessions
+        </h3>
+
+        <h4>The Problem</h4>
+
+        <p>In order to group user interactions into sessions, we needed to decide how to identify, and how to start and end each session.</p>
+
+
+        <h4>Our Choice: server-side session management</h4>
+          <h5>Identifying a session</h5>
+
+          <p><img src="images/session-begin-transparent.png" alt="MIMIC challenge: identifying a session" /></p>
+
+          <p>
+            A session begins when a user visits any page in the client application. Our script loads and sends batches of events at a specified interval — 5 seconds by default.
+          </p>
+
+          <p>
+            When the backend server receives the first set of events it checks the request's headers for a valid session cookie. Since this is the first batch of events there will not be a valid cookie. The backend creates a new session id, attaches it to a cookie, and returns this cookie to the client browser as part of its response.
+          </p>
+
+          <p>
+            Each subsequent batch of events sent to the backend includes this cookie to identify it as belonging to the same session.
+          </p>
+
+          <h5>Ending a session</h5>
+
+          <p><img src="images/session-end-transparent.png" alt="MIMIC challenge: ending a session" /></p>
+
+          <p>Active session event data is stored in an in-memory temporary data store (Redis) that includes a time-to-live (TTL). </p>
+
+          <p>Every time a new batch of events is added to the temporary data store, the TTL for the given session is reset. If a new batch of events with that session id does not arrive prior to the end of the associated TTL, the session is deemed to have ended.</p>
+
+          <p>At this point the session event data is removed from the in-memory temporary data store and moved to the object-based permanent data store. If a batch of events arrives after the expiry of the TTL (only in situations where the browser is not active/open for prolonged period), a new session is created and a new session id is returned in the response to the client browser</p>
+
+          <p>Additionally, the script has logic that will cease the sending of batched events to the server if the user is deemed inactive. This is assessed via the <code>visibilityChange</code> event on the global <code>document</code> object. When the visibility state changes to <code>hidden</code> we send one final batch of events before stopping the recorder and the interval tracking when the next batch of events should be sent. This occurs when the browser is minimized or the user switches to a different tab in the browser. This prevents excessive requests to the server containing no value, and bloating of event data in the in-memory storage and subsequently object storage. If later the user returns to the page and the visibility state changes to <code>visible</code> we reinitialize the recorder and save interval to again record the user’s session.
+          </p>
+
+        <h4>The Benefits</h4>
+
+        <p>Server-side session management allows the server to control the entire session lifecycle.</p>
+
+        <p>This is important because:</p>
+
+        <ol>
+          <li>The server, uniquely, can directly communicate with every aspect of our architecture.</li>
+          <li>When a session begins, this needs to be communicated to the relational database and the temporary data store. When it ends, the session data must be transferred from the temporary data store to the permanent one. If the logic resided, for example, in the frontend client there is risk that the message to end the session would never reach the backend due to network issues in addition to further impacting performance of the instrumented web application.</li>
+        </ol>
+
+        <h4>The Tradeoffs</h4>
+
+        <p>It is possible that due to network error or congestion, batches of events may arrive after the session has expired on the backend.</p>
+        
+        <p>Although the data would not be lost, this would result in a single session being broken up across two or more sessions. We mitigate this by allowing 5 seconds for batches of events to be handled by the server and sent to the temporary data store (refreshing the TTL) prior to the session being deemed complete.</p>
+        
+        <h4>The Alternatives</h4>
+          <h5>Partial client-side session management</h5>
+
+          <p>It is possible for the session management to be handled on the client-side within the MIMIC script. This would involve offloading the creation, continuance, and ending of sessions to the browser while the backend would still be responsible for handling incoming batches of events. There are, however, two concerns with this option:</p>
+
+          <ol>
+            <li>This would require increased MIMIC script logic running in the instrumented application which would further impact performance. The MIMIC script running in the frontend would now be responsible for creating session identifiers, refreshing expiration of the session as appropriate and handling additional logic for when a session should be deemed complete. This goes against one of the primary objectives of MIMIC to have the lowest impact possible on instrumented application performance.</li>
+            <li>It’s possible that due to a network error or browser crash that a browser’s request to end a session might never arrive at the backend server or be made at all. This would result in session event data that never gets transferred from the in-memory temporary data store to the object-based permanent data store for display in MIMIC’s dashboard. These unended sessions would build up in the in-memory temporary data store unnecessarily hoarding resources.</li>
+          </ol>
+
+
+          <h5>Total client-side session management</h5>
+
+          <p>Taking the previous alternative one step further, it is possible for the client-side to handle all aspects of session management (i.e. session beginning, event storage during the session, and sending of all event data at the end of the session). However, this alternative compounds the aforementioned concerns.</p>
+
+          <p>Total client-side session management would result in an even greater performance impact on the instrumented application as an increasingly large event data object would need to be stored in browser memory or <code>localStorage</code>. </p>
+
+          <p>The problem with in browser memory is that it does not persist once the browser has been closed. If a network error were to take place or the browser crashed, an entire recorded session could be lost.</p>
+
+          <p><code>localStorage</code> persists, addressing this problem, but it presents a new one as it has a limit of 5-10 MB per domain which would need to be shared with the client application itself.</p>
+
+        <h3 id="section-8-2">
+          8.2. Storage
+        </h3>
+
+        <h4>The Problem</h4>
+
+        <p>Each user session creates three different types of data with very different storage needs: active session data that requires frequent updates, completed session data that needs to be stored long-term, and session metadata that needs to be queried.</p>
+        
+        <h4>Our Choices</h4>
+
+        <p>
+          We chose to use a different data store for each of our different types of data.
+        </p>
+
+        <p><img src="images/storage-transparent.png" alt="MIMIC challenge: data stores choice"/></p>
+
+          <h5>In-memory data store</h5>
+
+          <p>We chose to use an in-memory data store as a buffer holding active session event data, and only update the permanent store of data once the session ends.</p>
+          
+          <p>The in-memory temporary data store provides:</p>
+          
+          <ul>
+            <li><strong>Low-latency.</strong> In-memory data stores store data in RAM providing faster access times compared to disk. This is valuable as this will be the most frequently accessed data store we employ.</li>
+            <li><strong>Scalability.</strong> Using an in-memory data store for active session data allows this layer to be scaled independently from the relational database avoiding complexity as the number of concurrent user sessions grows.</li>
+          </ul>
+          
+          <h5>Object-based storage</h5>
+
+          <p>Once the session has ended, the event data will no longer change and no longer benefit as greatly from the low-latency in-memory data store. From this point, we use fflate, a compression library, to prepare the data for an object-based storage service that provides:</p>
+
+          <ul>
+            <li><strong>Scalability.</strong> The distributed nature of object-based storage systems allow them to handle growing amounts of data without worrying about hardware limitations.</li>
+            <li><strong>Durability.</strong> Object-based storage systems typically use disk storage for persistent storage. Data is also typically replicated across multiple servers and data centers to ensure durability and availability.</li>
+          </ul>
+
+          <p>Compressing and decompressing data on the server side allows us to reduce the amount of storage required for completed session data, but without the additional performance impact on the instrumented application or the frontend dashboard.</p>
+
+          <h5>Relational database</h5>
+
+          <p>We chose to use a relational database for storing and querying our session metadata. Each record includes a project id that connects sessions to project credentials, and a session id that connects the metadata to the event data in the object-based permanent data store.</p>
+          <p>We selected a relational (SQL) database rather than a document (NoSQL) database for our session metadata due to SQL’s relative strength in efficiently performing complex queries and the lack of a need for a dynamic schema since the structure of our data is rigid.</p>
+
+        <h4>The Tradeoffs</h4>
+
+        <p>There are three main tradeoffs to our approach:</p>
+
+        <ul>
+          <li><strong>Potential data loss.</strong> While active sessions are stored in-memory, there is the potential for this data to be lost if the node that this data is being stored on goes down.</li>
+          <li><strong>Increased complexity.</strong> Because we are using multiple stores of data, the application now requires logic for moving the session data from the temporary in-memory data store to the permanent object-based storage and to ensure data is neither lost nor made redundant as this happens.</li>
+          <li><strong>Time to decompress data.</strong> Compressing the session event data kept in the object-based permanent data store means that some time is required to decompress it prior to viewing it in the replayer. </li>
+        </ul>
+
+        <h4>The Alternative</h4>
+
+          <h5>Only relational database and object-based storage</h5>
+
+          <p>This alternative excludes the use of an in-memory temporary data store as a buffer storing the active session event data.</p>
+          <p>In this situation, the relational database would continue to store session metadata, whereas the object-based storage would now be responsible for holding both active and completed session event data.</p>
+          <p>The disadvantage to this approach is that edits cannot be made directly to data in object-based storage. For every subsequent batch of events for each session, we would need to download the event data from storage, decompress that data, append the new events, recompress the data, and upload it back to storage. </p>
+          <p>Alternatively, we could forgo compressing the event data that is stored in the object-based storage so the object can be pulled out, edited, and put back in more efficiently. Of course, this would increase the size of the data that needs to be stored contributing to increased costs.
+          </p>
+
+        <!-- Section 9 -->
+        <h2 id="section-9">
+          9. Future Work
+        </h2>
+
+        <p>
+          MIMIC provides developers greater visibility into their users’ experiences with their web application. While we are proud of what we’ve accomplished, we appreciate there is future work to be done to make MIMIC even more valuable for its users. Here are some directions we could take to improve our framework:
+        </p>
+
+        <ul>
+          <li>Containerize the infrastructure using Docker for easier deployment.</li>
+          <li>Provide support for more frameworks (e.g. Ruby on Rails, Django, .NET).</li>
+          <li>Increase testing coverage.</li>
+          <li>Convert to TypeScript for better maintainability.</li>
+          <li>Paginate sessions displayed on the dashboard for better performance as the number of recorded sessions grows.</li>
+        </ul>
+
+        <!-- Section 10 -->
+        <h2 id="section-10">10. References</h2>
+        
+        <ol>
+          <li><p><a href="https://info.honeycomb.io/observability-engineering-oreilly-book-2022">https://info.honeycomb.io/observability-engineering-oreilly-book-2022</a></p></li>
+          <li><p><a href="https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ ">https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/</a></p></li>
+          <li><p><a href="https://logrocket.com/for/frontend-application-monitoring">https://logrocket.com/for/frontend-application-monitoring</a></p></li>
+          <li><p><a href="https://newrelic.com/blog/how-to-relic/debugging-front-end-issues-with-session-replay ">https://newrelic.com/blog/how-to-relic/debugging-front-end-issues-with-session-replay</a></p></li>
+          <li><p><a href="https://www.datadoghq.com/knowledge-center/session-replay/ ">https://www.datadoghq.com/knowledge-center/session-replay/</a></p></li>
+          <li><p><a href="https://www.fullstory.com/session-replay/">https://www.fullstory.com/session-replay/</a></p></li>
+          <li><p><a href="https://www.dynatrace.com/news/blog/what-is-session-replay/">https://www.dynatrace.com/news/blog/what-is-session-replay/</a></p></li>
+          <li><p><a href="https://www.fullview.io/blog/what-is-session-replay">https://www.fullview.io/blog/what-is-session-replay</a></p></li>
+          <li><p><a href="https://posthog.com/blog/best-open-source-session-replay-tools ">https://posthog.com/blog/best-open-source-session-replay-tools</a></p></li>
+          <li><p><a href="https://www.highlight.io/docs/general/company/open-source/hosting/self-host-hobby">https://www.highlight.io/docs/general/company/open-source/hosting/self-host-hobby</p></li>
+          <li><p><a href="https://posthog.com/questions/self-hosted-version">https://posthog.com/questions/self-hosted-version</a></p></li>          
+        </ol>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="presentation" class="main-section">
+    <div class="bg-gray">
+      <h2>Presentation</h2>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?si=GZM1U681uMv_maot&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div id="our-team" class="main-section">
+    <div>
+      <div>
+        <div>
+          <h2>Meet our team</h2>
+          <p class="text-xl text-gray-300">
+            We are currently looking for opportunities. If you liked what you
+            saw and want to talk more, please reach out!
+          </p>
+        </div>
+        <ul class="people">
+
+          <li class="profile">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="https://avatars.githubusercontent.com/u/104658311?v=4" alt="" />
+            <div>
+              <div>
+                <h3>Louis Mascari</h3>
+                <p>Knoxville, TN, USA</p>
+              </div>
+
+              <ul class="social">
+                <li>
+                  <a href="mailto:lmascari16@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/louis-mascari-606972222/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/Louis-Mascari" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="https://louismascari.com" target="_blank"><i class="fas fa-globe"></i></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="profile">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="https://media.licdn.com/dms/image/D4E03AQHZDOQxvb-9Ow/profile-displayphoto-shrink_200_200/0/1707071555044?e=1717632000&v=beta&t=vBKDgOu9GiNpOtrMW7HNs-VihjT6CCImLuB5bQfiImI" alt="" />
+            <div>
+              <div>
+                <h3>Lucas Sorribes</h3>
+                <p>Madrid, Spain</p>
+              </div>
+
+              <ul class="social">
+                <li>
+                  <a href="mailto:lucas@luxor.dev" target="_blank"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/lucas-sorribes/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/devluxor/" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="https://luxor.dev" target="_blank"><i class="fas fa-globe"></i></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="profile">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="https://avatars.githubusercontent.com/u/103079186?v=4" alt="" />
+            <div>
+              <div>
+                <h3>Veronika Todd</h3>
+                <p>Hartford, CT, USA</p>
+              </div>
+
+              <ul class="social">
+                <li>
+                  <a href="mailto:veronika.toddb@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/veronika-todd/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/VSTodd" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="https://vstodd.xyz" target="_blank"><i class="fas fa-globe"></i></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+          <li class="profile">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="https://avatars.githubusercontent.com/u/23236397?v=4" alt="" />
+            <div>
+              <div>
+                <h3>Erik Wiens</h3>
+                <p>New York, NY, USA</p>
+              </div>
+
+              <ul class="social">
+                <li>
+                  <a href="mailto:erik.wiens@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/ErikWiens" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.erikwiens.com" target="_blank"><i class="fas fa-globe"></i></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- </div>
+  </div>
+  </div> -->
+
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img src="" alt="Expanded Image" class="modal-content">
+  </div>
+
+  <script src="javascripts/script.js"></script>
+</body>
+</html>
